@@ -12,7 +12,7 @@ spec:
   duration: 90m
   url: https://github.com/tsalm-pivotal/tap-carvel-workshop
   content:
-    image: #@ "{}/tap-workshop/tap-carvel-workshop:latest".format(data.values.container_registry.hostname)
+    image: #@ "{}/tap-carvel-workshop:latest".format(data.values.container_registry.hostname)
     files: #@ "github.com/{}/tap-carvel-workshop?ref={}".format(data.values.workshop_git.username,data.values.workshop_git.branch)
   session:
     namespaces:
