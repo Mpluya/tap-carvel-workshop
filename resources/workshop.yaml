@@ -1,6 +1,19 @@
 #@ load("@ytt:data", "data")
 ---
 apiVersion: learningcenter.tanzu.vmware.com/v1beta1
+kind: WorkshopEnvironment
+metadata:
+  name: tap-carvel-workshop
+spec:
+  workshop:
+    name: tap-carvel-workshop
+  request:
+    enabled: true
+    token: supersecretpassword
+    namespaces:
+    - teach
+---
+apiVersion: learningcenter.tanzu.vmware.com/v1beta1
 kind: Workshop
 metadata:
   name: tap-carvel-workshop
@@ -9,7 +22,7 @@ spec:
   description: A workshop for self-paced learning of all the tools Carvel provides for the installation of TAP
   vendor: tanzu.vmware.com
   difficulty: beginner
-  duration: 90m
+  duration: 10m
   url: https://github.com/tsalm-pivotal/tap-carvel-workshop
   content:
     image: #@ "{}/tap-carvel-workshop:latest".format(data.values.container_registry.hostname)

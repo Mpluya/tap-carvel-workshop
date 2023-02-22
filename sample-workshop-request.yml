@@ -1,0 +1,9 @@
+apiVersion: learningcenter.tanzu.vmware.com/v1beta1
+kind: WorkshopRequest
+metadata:
+  name: tap-carvel-workshop
+  namespace: teach
+spec:
+  environment:
+    name: tap-carvel-workshop
+    token: supersecretpassword
